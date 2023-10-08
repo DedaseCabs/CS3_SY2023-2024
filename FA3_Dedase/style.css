@@ -2,7 +2,6 @@ body {
     background-image: url("image.jpg");
     background-position: center;
     background-attachment: fixed;
-    margin: 0px;
 }
 h1 {
     font-family: Helvetica;
