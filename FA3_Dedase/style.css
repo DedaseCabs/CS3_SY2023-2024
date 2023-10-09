@@ -6,7 +6,7 @@ body {
     background-size: 100%;
 }
 h1 {
-    font-family: Helvetica;
+    font-family: Hello Headline; src: url("Hello Headline.ttf");
     text-align: center;
     background-color: #799668;
     border: 2px dotted #3d68df;
