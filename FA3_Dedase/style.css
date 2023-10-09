@@ -1,4 +1,4 @@
-@font-face {font-family: Hello Headline; src: url("Hello Headline.ttf");}
+@font-face {font-family: Hello-Headline; src: url("Hello-Headline.ttf");}
 body {
     background-image: url("image.jpg");
     background-position: center;
@@ -7,7 +7,7 @@ body {
     background-size: 100%;
 }
 h1 {
-    font-family: Hello Headline;
+    font-family: Hello-Headline;
     text-align: center;
     background-color: #799668;
     border: 2px dotted #3d68df;
