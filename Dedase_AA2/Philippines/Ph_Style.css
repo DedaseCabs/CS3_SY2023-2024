@@ -1,0 +1,78 @@
+body {
+    margin: 0; 
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+.background { 
+    background-image: url("Philippines_Flag_Blur.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav {
+    overflow: hidden;
+    display: flex;
+    padding: 10px;
+}
+.nav a {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    border: 1px solid #454545;
+    background-image: linear-gradient(to bottom right, #79aa79, #9776a3);
+    border-radius: 25px;
+    flex: 1;
+    transition: background-image;
+    text-decoration: none;
+    color: black;
+}
+.nav a:hover {
+    background-image: linear-gradient(to top left, #79aa79, #9776a3);
+}
+.nav img {
+    flex: 1;
+    max-width: max-content;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.map {
+    padding-bottom: 50px;
+    position: relative;
+    float: left;
+    top: 350px;
+    left: 10px
+}
+.map iframe {
+    float: left;
+    height: 350px;
+    width: 655px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    padding-bottom: 10px;
+}
+.Ph {
+    left: 10px;
+    top: 10px;
+    float: left;
+    text-align: center;
+    position: relative;
+    padding-bottom: 200px;
+}
+.information {
+    position: relative;
+    left: 30px;
+    color: white;
+}
+p {
+    font-size: 20px
+}
+.size {
+    height: auto; 
+    width: 655px;
+}
+h1 {
+    padding-bottom: 20px
+}
