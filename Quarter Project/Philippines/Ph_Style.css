@@ -18,7 +18,7 @@ body {
 .nav a {
     text-align: center;
     padding: 28px;
-    font-size: 20px;
+    font-size: 25px;
     flex: 1;
     background-color: #537057;
     transition: background-color 0.2s ease-in-out;
