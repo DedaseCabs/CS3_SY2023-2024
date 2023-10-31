@@ -11,28 +11,28 @@ body {
 }
 .nav {
     display: flex;
-    padding: 10px;
-    padding-bottom: 30px;   
+    width: 100%;
+    background-color: #537057;
 }
 .nav a {
     text-align: center;
-    padding: 20px;
+    padding: 28px;
     font-size: 20px;
-    border: 1px solid #454545;
-    background-image: linear-gradient(to bottom right, #79aa79, #9776a3);
-    border-radius: 25px;
     flex: 1;
-    transition: background-image;
+    background-color: #537057;
+    transition: background-color 0.2s ease-in-out;
     text-decoration: none;
+    color: black;
 }
 .nav img {
     flex: 1;
     max-width: max-content;
-    margin-right: 17%;
-    margin-left: 17%;
+    margin: 10px 18%;
+    background-color: #435344;
+    border-radius: 30px;
 }
 .nav a:hover {
-    background-image: linear-gradient(to top left, #79aa79, #9776a3);
+    background-color: #5b8f62;
 }
 .worldinfo {
     flex: 1;
@@ -42,6 +42,7 @@ body {
     padding-bottom: 50px;
     display: flex;
     justify-content: center;
+    padding-top: 20px;
 }
 .map iframe {
     height: 540px;
