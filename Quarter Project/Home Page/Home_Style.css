@@ -34,10 +34,6 @@ body {
 .nav a:hover {
     background-color: #5b8f62;
 }
-.worldinfo {
-    flex: 1;
-    max-height: 30px;
-}
 .map {
     padding-bottom: 50px;
     display: flex;
@@ -49,12 +45,4 @@ body {
     width: 1000px;
     background-color: #22a19b;
     padding: 10px;
-}
-.woo {
-    height: auto;
-    float: left;
-    width: 50px;
-    position: relative;
-    top: 8px;
-    left: 225px;
 }
