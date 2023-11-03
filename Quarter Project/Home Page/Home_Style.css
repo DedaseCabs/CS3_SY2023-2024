@@ -35,14 +35,22 @@ body {
     background-color: #5b8f62;
 }
 .map {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
 }
 .map iframe {
     height: 540px;
     width: 1000px;
     background-color: #22a19b;
     padding: 10px;
+}
+p {
+    background-color: #9bd48c;
+    padding: 20px;
+    border-radius: 50px;
+    display: flex;
+    margin: 20px auto;
+    width: fit-content;
+
 }
