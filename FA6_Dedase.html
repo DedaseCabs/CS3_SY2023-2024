@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cheese</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 10px;   
+                background-image: linear-gradient(to bottom left, #74a587, #123817);
+                background-attachment: fixed;
+            }
+            nav {
+                margin-top: 30px;
+                gap: 160px;
+                display: flex;
+                justify-content: center;
+            }
+            a:link {
+                border: 1px solid black;
+                text-align: center;
+                padding: 20px 50px;
+                background-color: rgb(172, 212, 182);
+                text-decoration: none;
+                color: black;
+                border-radius: 35px;
+            }
+            a:hover {
+                border: 1px solid rgb(35, 46, 33);
+                background-color: rgb(153, 199, 146);
+            }
+            a:visited{
+                color: black;
+                background-color: #7ca081;
+            }
+            a:active {
+                background-color: rgb(102, 131, 97);
+            }
+            #div1 {
+                border: 1px solid black;
+                text-align: center;
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                line-height: 100px;
+                margin-top: 20px;
+                background-color: rgba(201, 201, 201, 0.25);
+            }
+            #div2 {
+                border: 1px solid black;
+                text-align: center;
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                line-height: 100px;
+                margin-top: 20px;
+                background-color: rgba(201, 201, 201, 0.25);
+            }
+            #div1:target {
+                background-color: rgb(255, 235, 204);
+                color: rgb(72, 73, 23); 
+                font-weight: bold; 
+            }
+            #div2:target {
+                background-color: rgb(77, 106, 122);   
+                border: 10px dotted #7ad67a;
+                color: rgb(72, 73, 23);  
+                font-weight: bold; 
+            }
+            header {
+                display: flex;
+                justify-content: center;
+                gap: 200px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#div1">Link 1</a>
+            <a href="#div2">Link 2</a>
+        </nav>
+        <header>
+            <div id="div1">Div 1</div>
+            <div id="div2">Div 2</div>
+        </header>
+    </body>
+</html>
