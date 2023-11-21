@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>World Info</title>
-        <link rel="stylesheet" href="Home_Style.css">
+        <link rel="stylesheet" href="../Style.css">
         <link rel="icon" href="Icon.png">
+        <style>
+            body {
+                background-image: url(Background.jpg); 
+                background-position: center; 
+                background-attachment: fixed; 
+                background-repeat: no-repeat; 
+                background-size: cover;
+            }       
+            .map {
+                padding-bottom: 20px;
+                display: flex;
+                justify-content: center;
+            }
+            .map iframe {
+                height: 540px;
+                width: 75%;
+                background-color: #22a19b;
+                padding: 10px;
+            }
+            .nav img {
+                margin: 10px 18%;
+            }
+            p {
+                padding: 20px;
+                width: 90%;
+                border-radius: 50px;
+                text-align: center;
+                margin: 20px auto;
+                background-color: #8bb996;
+            }
+        </style>
     </head>
-    <body class="background">
-        <div class="nav">
+    <body>
+        <nav class="nav">
             <img src="World-Info.png">
             <a href="../Search Page/Search_Page.html"> Search </a>
-        </div>
+        </nav>
         <p>
             A very convenient website to find out information about any country! To start, you may look through this map, or search for a country in the search page.
         </p>
