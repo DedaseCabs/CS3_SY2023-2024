@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 3
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+
+            div {
+                background-color: white;
+                width: 300px;
+                height: 30px;
+                text-align: center;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 10px;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Name List </h1>
+
+       <table id="table"> 
+        <tr>
+            <th> First Name</th>
+            <th> Middle Name</th>
+            <th> Last Name</th>
+        </tr>
+       </table>
+       <button onclick="addName()">Add Name</button>
+        <script>
+            function addName(){
+                //Prompts the user to enter a name
+                name = prompt("Please enter your name (separate them by commas)");
+
+                //Creates a new row and cell per separated commas
+                table = document.getElementById("table");
+                insert = table.insertRow(0);
+                firstcell = insert.insertCell(0);
+                secondcell = insert.insertCell(1);
+                thirdcell = insert.insertCell(2);
+
+                //Splits the name by commas and prints them in their respective cells
+                split = name.split(",");
+                firstcell.innerHTML = split[0];
+                secondcell.innerHTML = split[1];
+                thirdcell.innerHTML = split[2];
+            }
+        </script>
+    </body>
+</html> 
