@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 5
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1> Modified FLAMES </h1>
+
+        <button onclick="flames()">Match Names</button>
+        <h3 id="name"></h3>
+
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+
+        <script>
+            function flames(){
+                let name1 = prompt("Enter the first name");
+                let name2 = prompt("Enter the second name");
+
+                name1 = name1.replace(/[^a-zA-Z]/g, "");
+                name2 = name2.replace(/[^a-zA-Z]/g, "");
+
+                let totalLength = name1.length + name2.length;
+                let determiner = totalLength % 6;
+
+                let result;
+                switch(true){
+                    case determiner == 1:
+                        result = "You're friends!";
+                        break;
+                    case determiner == 2:
+                        result = "You're lovers!";
+                        break;
+                    case determiner == 3:
+                        result = "You're acquaintances!";
+                        break;
+                    case determiner == 4:
+                        result = "You're having a happy marriage!";
+                        break;
+                    case determiner == 5:
+                        result = "You're enemies! (Woah)";
+                        break;
+                    case determiner == 0:
+                        result = "You're sweethearts!";
+                        break;
+                }
+
+                document.getElementById("name").innerHTML = name1 + " and " + name2;
+                document.getElementById("result").innerHTML = result; 
+            }
+        </script>
+    </body>
+</html>
