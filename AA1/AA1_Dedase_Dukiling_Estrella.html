@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Simple Inventory System</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="q4cs3aa1.css">
+
+    </head>
+
+    <body>
+
+        <h2 id="invitation">ようこそ！ Welcome to your Inventory!</h2>
+        <h4>What can we help you with today? Select below:</h4>
+
+        <button onclick="addNewItemPrompt()">Add A New Item</button>
+        <button onclick="addAmountPrompt()">Add Amount Of Items</button>
+        <button onclick="removeAmountPrompt()">Remove Amount Of Items</button>
+        <button onclick="removeItemPrompt()">Remove An Item</button>
+
+        <table id="inventoryTable">
+            <tr>
+                <th>Item Name</th>
+                <th>Number of Items</th>
+            </tr>
+        </table>
+        <script>
+            var inventory = [];
+            function addItem(name, amount){
+                var index = inventory.findIndex(item => item.itemName.toLowerCase() === name.toLowerCase());
+                if(index !== -1){
+                    inventory[index].noOfItem += amount;
+                }
+                else {
+                    inventory.push({itemName: name, noOfItem: amount});
+                }
+                displayItems();
+            }
+            function removeItem(name){
+                var index = inventory.findIndex(item => item.itemName.toLowerCase() === name.toLowerCase())
+                if(index !== -1){
+                    inventory.splice(index, 1);
+                    displayItems();
+                }
+                else {
+                    alert("This item isn't in your inventory!");
+                }
+            }
+            function addAmount(name, amount){
+                var index = inventory.findIndex(item => item.itemName.toLowerCase() === name.toLowerCase());
+                if(index !== -1){
+                    inventory[index].noOfItem += amount;
+                    displayItems();
+                }
+            }
+            function removeAmount(name, amount){
+                var index = inventory.findIndex(item => item.itemName.toLowerCase() === name.toLowerCase());
+                if(index !== -1){
+                    inventory[index].noOfItem -= amount;
+                    if(inventory[index].noOfItem < 0){
+                        inventory[index].noOfItem = 0;
+                    }
+                    displayItems();
+                }
+            }
+            function addNewItemPrompt(){
+                var name = prompt("Enter the item you want to add to your inventory").trim();
+                var amount = parseInt(prompt("Enter the amount of this item"));
+                addItem(name, amount);
+            }
+            function addAmountPrompt(){
+                var name = prompt("Enter the item you want to add an amount of").trim();
+                var amount = parseInt(prompt("Enter the amount you want to add to this item"));
+                addAmount(name, amount);
+            }
+            function removeAmountPrompt(){
+                var name = prompt("Enter the item you want to remove an amount of").trim();
+                var amount = parseInt(prompt("Enter the amount you want to remove to this item"));
+                removeAmount(name, amount);
+            }
+            function removeItemPrompt(){
+                var name = prompt("Enter the item you want removed from your inventory").trim();
+                removeItem(name);
+            }
+            function displayItems(){
+                var table = document.getElementById("inventoryTable");
+                //Prevents row duplication
+                for(var i = table.rows.length - 1; i > 0; i--){
+                    table.deleteRow(i);
+                }
+                //Creates a new row for inventory data
+                inventory.forEach(item => {
+                    var row = table.insertRow();
+                    var cellName = row.insertCell(0);
+                    var cellNum = row.insertCell(1);
+                    cellName.textContent = item.itemName;
+                    cellNum.textContent = item.noOfItem;
+                });
+            }
+        </script>
+    </body>
+</html>
