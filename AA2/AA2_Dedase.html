@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up Page</title>
+        <style>
+            @font-face {
+                font-family: Noto Serif JP;
+                src: url('Noto_Serif_JP/NotoSerifJP-Regular.otf');
+            }
+            body {
+                font-family: Noto Serif JP;
+                background-color: #272727;
+                color: white;
+            }
+            form {
+                max-width: 500px;
+                margin: 20px auto 0;
+                padding: 20px;
+                background-color: rgb(63, 63, 63);
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgb(63, 63, 63);
+            }
+            fieldset {
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+            legend {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            #name, #username, #gender, #password, #email, #address, #interests {
+                width: 96%;
+                padding: 10px;
+                border: none;
+                color: white;
+                background-color: #272727;
+                border-radius: 5px;
+                transition: border-color 0.3s ease;
+                font-family: Noto Serif JP;
+                margin-bottom: 20px;
+            }
+            #gender {
+                width: 100%;
+                font-family: Noto Serif JP;
+            }
+            #address, #interests {
+                resize: vertical;
+            }
+            #submit, #reset {
+                background-color:#525252;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-right: 10px;
+                font-family: Noto Serif JP;
+            }
+            #submit:hover, #reset:hover {
+                background-color: #696969;
+            }
+            #output {
+                margin-top: 20px;
+                padding: 10px 25px;
+                border-radius: 5px;
+                background-color:#3f3f3f;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="signupForm" onsubmit="return displayUserInfo()">
+            <fieldset>
+                <legend>Sign Up</legend>
+                <label for="name">Name</label>
+                <input type="text" name="Name" id="name" autocomplete="off" onblur="check(this)" onfocus="resetBorder(this)" required>
+
+                <label for="username">Username</label>
+                <input type="text" name="Username" id="username" autocomplete="off" onblur="check(this)" onfocus="resetBorder(this)" required>
+
+                <label for="gender">Gender</label>
+                <select name="Gender" id="gender" onblur="check(this)" onfocus="resetBorder(this)" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option> 
+                    <option>Prefer not to mention</option>
+                </select>
+
+                <label for="password">Password</label>
+                <input type="password" name="Password" id="password" autocomplete="off" onblur="check(this)" onfocus="resetBorder(this)" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" name="Email Address" id="email" autocomplete="off" onblur="check(this)" onfocus="resetBorder(this)" required>
+
+                <label for="address">Address</label>
+                <textarea name="Address" id="address" autocomplete="off" onblur="check(this)" onfocus="resetBorder(this)" required></textarea>
+
+                <label for="interests">Interests</label>
+                <textarea name="Interests" id="interests" autocomplete="off" onblur="check(this)" onfocus="resetBorder(this)" required></textarea>
+            </fieldset>
+            <input type="submit" id="submit" value="Submit">
+            <input type="reset" id="reset" value="Reset" onclick="removeForm()">
+        </form>
+
+        <div id="output"></div>
+        <script>
+            function check(inputElement){
+                if(inputElement.value === ""){
+                    inputElement.style.border = "1px solid #f00";
+                }
+                else {
+                    inputElement.style.border = "1px solid #0f0";
+                }
+            }
+            function resetBorder(inputElement){
+                inputElement.style.border = "1px solid grey";
+            }
+            function removeForm(){
+                document.getElementById("output").innerHTML = "";
+                document.getElementById("name").style.border = "none";
+                document.getElementById("username").style.border = "none";
+                document.getElementById("gender").style.border = "none";
+                document.getElementById("password").style.border = "none";
+                document.getElementById("email").style.border = "none";
+                document.getElementById("address").style.border = "none";
+                document.getElementById("interests").style.border = "none";
+            }
+            function displayUserInfo() {
+                var form = document.getElementById("signupForm");
+                var formData = new FormData(form);
+                var userInfo = "<h2>User Information</h2>";
+                for (var info of formData.entries()) {
+                    userInfo += "<p><b>" + info[0] + ":</b> " + info[1] + "</p>";
+                }
+                document.getElementById("output").innerHTML = userInfo;
+    
+                return false; // Prevent form submission
+  }
+        </script>
+    </body>
+</html>
